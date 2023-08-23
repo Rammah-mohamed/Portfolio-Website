@@ -1,0 +1,17 @@
+$main-color: #241468;
+$second-color: #cf12a6;
+
+$mobile: 768px;
+$mid: 992px;
+
+@mixin mobile {
+	@media (max-width: #{$mobile}) {
+		@content;
+	}
+}
+
+@mixin mid {
+	@media (min-width: #{$mobile}) and (max-width: #{$mid}) {
+		@content;
+	}
+}

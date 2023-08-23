@@ -1,0 +1,53 @@
+@import "../gobal.scss";
+
+.portList {
+	width: 50%;
+
+	@include mobile {
+		width: 100%;
+	}
+
+	@include mobile {
+		width: 100%;
+	}
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include mobile {
+			justify-content: center;
+			gap: 20px;
+		}
+
+		li {
+			font-size: 18px;
+			font-weight: 400;
+			color: black;
+			padding: 10px 20px;
+			border: 1px solid $main-color;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: all 0.5s ease;
+
+			@include mobile {
+				font-size: 13px;
+				padding: 8px;
+			}
+			@include mid {
+				font-size: 16px;
+				padding: 10px;
+			}
+
+			&:hover {
+				background-color: $main-color;
+				color: white;
+			}
+
+			&.active {
+				background-color: $main-color;
+				color: white;
+			}
+		}
+	}
+}

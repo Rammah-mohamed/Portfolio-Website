@@ -1,0 +1,173 @@
+@import "../gobal.scss";
+
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	color: $main-color;
+	transition: all 2s ease;
+	z-index: 3;
+
+	@include mobile {
+		height: 120px;
+	}
+
+	.wrapper {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 30px;
+
+		@include mobile {
+			padding: 15px;
+			display: block;
+		}
+
+		.left {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			@include mobile {
+				flex-direction: column;
+				justify-content: center;
+				gap: 10px;
+			}
+
+			a {
+				text-decoration: none;
+				color: $main-color;
+				h1 {
+					font-size: 40px;
+					margin-right: 40px;
+					transition: all 2s ease;
+
+					@include mobile {
+						font-size: 30px;
+						margin-right: 0;
+					}
+				}
+			}
+
+			.info {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				.container {
+					display: flex;
+					align-items: center;
+					margin: 0 10px;
+
+					@include mobile {
+						justify-content: space-between;
+					}
+
+					.icon {
+						color: $main-color;
+						font-size: 22px;
+						margin-right: 10px;
+						transition: all 2s ease;
+
+						@include mobile {
+							font-size: 18px;
+							margin-right: 5px;
+						}
+					}
+
+					a {
+						font-size: 16px;
+						font-weight: 500;
+						text-decoration: none;
+						color: $main-color;
+						transition: all 2s ease;
+
+						@include mobile {
+							font-size: 14px;
+						}
+					}
+					span {
+						font-size: 18px;
+						font-weight: 500;
+
+						@include mobile {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+
+		.right {
+			cursor: pointer;
+
+			@include mobile {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+			}
+			.humberger {
+				width: 28px;
+				height: 28px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				@include mobile {
+					width: 20px;
+					height: 20px;
+				}
+
+				.line {
+					width: 100%;
+					height: 3px;
+					background-color: $main-color;
+					transition: all 2s ease;
+
+					@include mobile {
+						height: 2px;
+					}
+				}
+			}
+		}
+	}
+
+	&.active {
+		background-color: $main-color;
+		color: white;
+
+		.wrapper {
+			.left {
+				a {
+					h1 {
+						color: white;
+					}
+				}
+				.info {
+					.container {
+						.icon {
+							color: white;
+						}
+
+						a {
+							color: white;
+						}
+					}
+				}
+			}
+
+			.right {
+				.humberger {
+					.line {
+						background-color: white;
+					}
+				}
+			}
+		}
+	}
+}
