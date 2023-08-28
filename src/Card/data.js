@@ -11,7 +11,8 @@ import music from "../img/music.png"
 import note from "../img/note.png"
 import quiz from "../img/quiz.png"
 import ty from "../img/type.png"
-import waether from "../img/weather.png"
+import weather from "../img/weather.png"
+import codeverDash from "../img/codeverDash.png"
 
 export const featured = [
   {
@@ -48,7 +49,7 @@ export const featured = [
     id:"6",
     url:"https://rammah-mohamed.github.io/Weather-App",
     name:"Weather App",
-    img:waether
+    img:weather
   }
 ]
 
@@ -114,7 +115,7 @@ export const jsApps = [
     id:"4",
     url:"https://rammah-mohamed.github.io/Weather-App",
     name:"Weather App",
-    img:waether
+    img:weather
   },
   {
     id:"5",
@@ -142,5 +143,11 @@ export const reactApps =[
     url:"https://react-my-youtube.netlify.app",
     name:"Youtube Clone",
     img:youtube
+  },
+  {
+    id:"3",
+    url:"https://codever-darshboard.netlify.app",
+    name:"codever Dashboard",
+    img:codeverDash
   }
 ]
