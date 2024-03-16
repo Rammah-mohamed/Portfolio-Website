@@ -8,6 +8,10 @@
 		height: unset !important;
 	}
 
+	@include mid {
+		height: unset !important;
+	}
+
 	> .wrapper {
 		width: 100%;
 		height: 100%;
@@ -16,30 +20,25 @@
 		justify-content: space-between;
 
 		@include mobile {
-			justify-content: unset;
+			flex-direction: column;
+		}
+
+		@include mid {
 			flex-direction: column;
 		}
 
 		.left {
 			height: 100%;
 			display: flex;
-			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			flex: 1;
-
-			@include mobile {
-				flex: unset;
-			}
-			@include mid {
-				height: unset;
-			}
 
 			img {
 				width: 80%;
 				height: 80%;
 				object-fit: cover;
-				animation: bounce 1s infinite alternate ease;
+				animation: bounce 2s infinite alternate ease;
 
 				@keyframes bounce {
 					100% {
@@ -50,35 +49,33 @@
 		}
 
 		.right {
-			height: 80%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			gap: 20px;
 			flex: 1;
 			border-left: 4px solid $second-color;
 
 			@include mobile {
-				height: 100%;
-				width: 70%;
+				width: 85%;
 				padding: 20px;
-				height: unset;
 				border-left: unset;
 				border-top: 2px solid $second-color;
 			}
 
-			@include mobile {
-				width: 80%;
-				padding: 40px;
-				height: unset;
+			@include mid {
+				width: 90%;
+				padding: 20px;
+				border-left: unset;
+				border-top: 2px solid $second-color;
 			}
 
 			h2 {
 				color: $main-color;
 				font-size: 60px;
 				letter-spacing: 4px;
-				margin-bottom: 20px;
-				transition: all 0.5s ease;
+				transition: all 2s ease;
 
 				@include mobile {
 					font-size: 30px;
@@ -86,7 +83,7 @@
 				}
 
 				@include mid {
-					font-size: 45px;
+					font-size: 50px;
 					letter-spacing: 2px;
 				}
 
@@ -96,32 +93,33 @@
 				}
 			}
 
-			.wrapper {
+			form {
 				width: 80%;
-				height: fit-content;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+				gap: 25px;
 
 				@include mobile {
+					width: 100%;
+				}
+
+				@include mid {
 					width: 100%;
 				}
 
 				input,
 				textarea {
 					width: 100%;
-					padding: 10px;
-					margin: 20px 0;
+					padding: 10px 20px;
 					background-color: white;
+					font-size: 18px;
+					font-weight: 500;
 					border: 2px solid $main-color;
 					border-radius: 10px;
 					caret-color: $second-color;
 					cursor: pointer;
-
-					@include mobile {
-						height: 100%;
-					}
 
 					&:hover {
 						border-color: $second-color;
@@ -130,6 +128,10 @@
 					&:focus {
 						border-color: $second-color;
 						outline: none;
+					}
+
+					@include mobile {
+						font-size: 16px;
 					}
 				}
 
@@ -149,7 +151,6 @@
 				button {
 					width: 120px;
 					height: 40px;
-					font-size: 16px;
 					font-weight: 500;
 					color: white;
 					background-color: $main-color;
@@ -157,13 +158,9 @@
 					outline: none;
 					border: none;
 					border-radius: 10px;
-
-					@include mobile {
-						width: 120px;
-						height: 40px;
-					}
 				}
 			}
+
 			h3 {
 				color: green;
 				font-weight: 500;
